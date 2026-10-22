@@ -1,0 +1,18 @@
+{
+  "assisted": {
+    "items": 12,
+    "total_minutes": 446,
+    "approved_items": 10,
+    "approved_per_hour": 1.345,
+    "mean_quality": 83.83,
+    "rework_minutes": 80
+  },
+  "manual": {
+    "items": 12,
+    "total_minutes": 590,
+    "approved_items": 10,
+    "approved_per_hour": 1.017,
+    "mean_quality": 83.83,
+    "rework_minutes": 80
+  }
+}

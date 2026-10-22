@@ -1,0 +1,13 @@
+{
+  "brand": "Northline Demo",
+  "required": [
+    "practical progress"
+  ],
+  "prohibited": [
+    "carbon neutral",
+    "zero impact",
+    "100% sustainable",
+    "guaranteed savings"
+  ],
+  "max_words": 70
+}

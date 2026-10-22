@@ -1,0 +1,242 @@
+[
+  {
+    "id": "manual-1",
+    "workflow": "manual",
+    "draft_minutes": 29,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 82,
+    "synthetic": true
+  },
+  {
+    "id": "manual-2",
+    "workflow": "manual",
+    "draft_minutes": 30,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 89,
+    "synthetic": true
+  },
+  {
+    "id": "manual-3",
+    "workflow": "manual",
+    "draft_minutes": 31,
+    "review_minutes": 8,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 76,
+    "synthetic": true
+  },
+  {
+    "id": "manual-4",
+    "workflow": "manual",
+    "draft_minutes": 32,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 83,
+    "synthetic": true
+  },
+  {
+    "id": "manual-5",
+    "workflow": "manual",
+    "draft_minutes": 33,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": false,
+    "quality_score": 90,
+    "synthetic": true
+  },
+  {
+    "id": "manual-6",
+    "workflow": "manual",
+    "draft_minutes": 34,
+    "review_minutes": 8,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 77,
+    "synthetic": true
+  },
+  {
+    "id": "manual-7",
+    "workflow": "manual",
+    "draft_minutes": 35,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 84,
+    "synthetic": true
+  },
+  {
+    "id": "manual-8",
+    "workflow": "manual",
+    "draft_minutes": 36,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 91,
+    "synthetic": true
+  },
+  {
+    "id": "manual-9",
+    "workflow": "manual",
+    "draft_minutes": 37,
+    "review_minutes": 8,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 78,
+    "synthetic": true
+  },
+  {
+    "id": "manual-10",
+    "workflow": "manual",
+    "draft_minutes": 38,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": false,
+    "quality_score": 85,
+    "synthetic": true
+  },
+  {
+    "id": "manual-11",
+    "workflow": "manual",
+    "draft_minutes": 39,
+    "review_minutes": 8,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 92,
+    "synthetic": true
+  },
+  {
+    "id": "manual-12",
+    "workflow": "manual",
+    "draft_minutes": 40,
+    "review_minutes": 8,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 79,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-1",
+    "workflow": "assisted",
+    "draft_minutes": 10,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 82,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-2",
+    "workflow": "assisted",
+    "draft_minutes": 11,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 89,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-3",
+    "workflow": "assisted",
+    "draft_minutes": 12,
+    "review_minutes": 15,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 76,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-4",
+    "workflow": "assisted",
+    "draft_minutes": 13,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 83,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-5",
+    "workflow": "assisted",
+    "draft_minutes": 14,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": false,
+    "quality_score": 90,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-6",
+    "workflow": "assisted",
+    "draft_minutes": 15,
+    "review_minutes": 15,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 77,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-7",
+    "workflow": "assisted",
+    "draft_minutes": 16,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 84,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-8",
+    "workflow": "assisted",
+    "draft_minutes": 17,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 91,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-9",
+    "workflow": "assisted",
+    "draft_minutes": 18,
+    "review_minutes": 15,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 78,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-10",
+    "workflow": "assisted",
+    "draft_minutes": 19,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": false,
+    "quality_score": 85,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-11",
+    "workflow": "assisted",
+    "draft_minutes": 20,
+    "review_minutes": 15,
+    "rework_minutes": 4,
+    "approved": true,
+    "quality_score": 92,
+    "synthetic": true
+  },
+  {
+    "id": "assisted-12",
+    "workflow": "assisted",
+    "draft_minutes": 21,
+    "review_minutes": 15,
+    "rework_minutes": 12,
+    "approved": true,
+    "quality_score": 79,
+    "synthetic": true
+  }
+]

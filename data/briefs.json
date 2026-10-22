@@ -1,0 +1,20 @@
+[
+  {
+    "id": "B01",
+    "product": "Modular wall panel",
+    "audience": "building contractors",
+    "verified_fact": "The demo specification lists 45% recycled content."
+  },
+  {
+    "id": "B02",
+    "product": "Timber kit",
+    "audience": "retail buyers",
+    "verified_fact": "Dimensions are available in the synthetic product sheet."
+  },
+  {
+    "id": "B03",
+    "product": "Insulation board",
+    "audience": "project planners",
+    "verified_fact": "Request an environmental declaration before comparing alternatives."
+  }
+]

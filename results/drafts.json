@@ -1,0 +1,32 @@
+[
+  {
+    "id": "B01",
+    "text": "Northline Demo: Modular wall panel for building contractors. The demo specification lists 45% recycled content. Built for practical progress. Contact our team to discuss your project.",
+    "mode": "Offline deterministic template \u2014 not LLM inference",
+    "evaluation": {
+      "score": 100,
+      "violations": [],
+      "publishable": true
+    }
+  },
+  {
+    "id": "B02",
+    "text": "Northline Demo: Timber kit for retail buyers. Dimensions are available in the synthetic product sheet. Built for practical progress. Contact our team to discuss your project.",
+    "mode": "Offline deterministic template \u2014 not LLM inference",
+    "evaluation": {
+      "score": 100,
+      "violations": [],
+      "publishable": true
+    }
+  },
+  {
+    "id": "B03",
+    "text": "Northline Demo: Insulation board for project planners. Request an environmental declaration before comparing alternatives. Built for practical progress. Contact our team to discuss your project.",
+    "mode": "Offline deterministic template \u2014 not LLM inference",
+    "evaluation": {
+      "score": 100,
+      "violations": [],
+      "publishable": true
+    }
+  }
+]
