@@ -1,60 +1,73 @@
 # AI Marketing Transformation & Governance
 
-A runnable, independent **Business × AI research MVP** for a European enterprise master's thesis portfolio. Developed with AI assistance. All bundled data and business outcomes are **synthetic**; no employer files, real supplier records or personal customer data are used.
+**Can faster drafting still save work after someone checks the claims?**
 
-**Research question:** When does assisted marketing production create useful capacity after accounting for review labor, brand consistency and unsupported-claim risk?
+This independent research prototype follows a small marketing team at **Northline Demo**, a fictional building-products brand. It connects a product brief to editable copy, brand checks and a human decision. A separate synthetic experiment compares drafting, review and rework effort.
 
-**Thesis-topic alignment (user-supplied target):** Derome — AI-Driven Marketing Organization. This is a thematic alignment, not an affiliated company project, endorsed application, or verification of an open vacancy.
+Developed with AI assistance. All briefs, workflow observations and business outcomes are synthetic. There is no company affiliation or production deployment.
 
-## What runs
+## Follow one piece of copy
 
-- Marketing brief to editable copy using an offline template or optional local Ollama model
-- Policy-configured brand checks, prohibited claims and word limits
-- Human factual-support confirmation and approval gate
-- Manual vs assisted workflow metrics including review and rework effort
-- Charts and a research protocol separating productivity assumptions from observed effects
+Choose **B01 — Modular wall panel**, aimed at building contractors. Its supplied demo fact says that the specification lists 45% recycled content. Generate the offline draft, then append **“carbon neutral”**. The checker flags that prohibited phrase and approval is blocked.
 
-![Synthetic results](results/overview.svg)
+Remove the phrase, inspect the supplied fact and confirm factual support. You can now record an approval with a reviewer alias and reason. Edit the copy again: factual confirmation resets, and the changed artifact has a different identifier. The application records decisions locally; it never publishes an advertisement.
 
-## Quick start — no paid API key
+This example illustrates the project's central distinction: passing a wording check is not the same as establishing that a claim is true.
 
-Python 3.10 or newer. Run from this repository's root in its own environment:
+## Run it
+
+Use Python 3.10 or newer, from this repository's root:
 
 ```bash
 python -m venv .venv
-# Linux/macOS:
+# macOS/Linux:
 source .venv/bin/activate
-# Windows PowerShell alternative: .venv\Scripts\Activate.ps1
+# Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements-dev.txt
 python -m portfolio.demo
 python -m pytest -q
 python -m streamlit run app.py --server.address 127.0.0.1
 ```
 
-Open the localhost URL printed by Streamlit (normally port 8501). `python -m portfolio.demo` rebuilds committed JSON results and the SVG without third-party dependencies. Dashboard and UI tests require Streamlit and pandas. Install each project separately: they intentionally share the same local `portfolio` package name and are not designed to be installed together.
+Open the localhost URL shown by Streamlit. The default mode needs no model, API key or external service. The CLI demo uses the Python standard library and rebuilds the JSON results and SVG.
 
-## Reviewer walkthrough
+For VS Code with Docker and Dev Containers, choose **Reopen in Container**. The included configuration installs development dependencies and forwards port 8501. Start Streamlit in the container with `python -m streamlit run app.py --server.address 0.0.0.0`. This configuration is for the offline workflow; its image tag and dependency ranges are not an immutable environment lock.
 
-See [DEMO.md](docs/DEMO.md) for a guided scenario and [RESEARCH_REPORT.md](reports/RESEARCH_REPORT.md) for methods, computed outputs, limitations and a feasible thesis study. [DATA.md](docs/DATA.md) describes the synthetic data and metric definitions. [REUSE.md](docs/REUSE.md) documents the existing-repository review and component reuse.
+## What is implemented
 
-The UI never executes a purchase or publishes marketing content. Where human reviews are enabled, decisions are stored in ignored `runtime/audit.sqlite`. Reviewer aliases are self-declared; approval is a demonstration of workflow state, not legal or organizational authorization. A completed version cannot be reviewed twice; edits create a new artifact hash. Hash chains detect edits but do not prevent deletion or wholesale rewriting by an administrator.
+- **Drafting:** a deterministic template; an optional Ollama HTTP adapter is available but only mock-tested.
+- **Checks:** case-insensitive phrase matching for required/prohibited wording and a word limit. The score is a heuristic, not a validated brand-quality measure.
+- **Review:** factual confirmation, approve/revise/reject decisions, and a reason. SQLite stores decisions tied to a SHA-256 artifact identifier.
+- **Evaluation:** approved items per total labour hour, including review and rework. pandas and Streamlit display the computed metrics.
 
-## Structure
+There is no model training, RAG, semantic fact checker or automated publishing. The review store records identifiers and decisions, not recoverable snapshots of every draft. Reviewer aliases are self-declared; the hash chain is inspectable, not an immutable audit system.
 
-- `portfolio/`: domain logic, reusable charts, review storage and CLI experiment
-- `app.py`: interactive Streamlit dashboard
-- `data/`: fictional inputs, documented in `docs/DATA.md`
-- `tests/`: analytical, boundary, governance and UI tests
-- `results/`: reproducible computed outputs and visualization
-- `reports/`: English research report and test evidence
-- `.github/workflows/tests.yml`: CI definition (remote CI status is reported only after execution)
+## What the experiment tells us
 
-## Verification and limits
+![Synthetic workflow comparison](results/overview.svg)
 
-Offline content is a deterministic template, not generative inference. Phrase checks are a limited brand-policy proxy and can miss paraphrases, negation and subtle greenwashing. Workflow labor and quality data are synthetic assumptions. The optional Ollama interface was tested with a mocked response; live model generation has not been validated.
+The 24 invented observations yield 10 approved items in each condition. Assumed total effort is 590 minutes manually and 446 with assistance. The modeled difference is **24.4%**, determined by the inputs—not measured business savings. Assisted review is deliberately slower: 15 rather than 8 minutes per item.
 
-No business improvement, model accuracy on real documents, company adoption, live cloud API result or production readiness is claimed. See the report for the exact measurement boundary. Do not upload confidential data into this demonstration.
+The useful contribution is a way to examine the trade-off. A real pilot would additionally measure rejected work, training and administration costs, independent quality ratings and uncertainty. See the [research report](reports/RESEARCH_REPORT.md) for the proposed study.
 
-## License
+## Where to look
 
-MIT for code and original synthetic materials. Reused upstream code retains attribution in [REUSE.md](docs/REUSE.md).
+- [Guided demo](docs/DEMO.md): the approval scenario and a known checker failure.
+- [Architecture](docs/ARCHITECTURE.md): data flow, module responsibilities and trust boundaries.
+- [Data definitions](docs/DATA.md): synthetic inputs and metric definitions.
+- `portfolio/marketing.py`: draft, checks and calculations.
+- `portfolio/governance.py`: review storage and integrity checks.
+- `tests/`: domain, governance and Streamlit regression tests.
+- [Validation notes](reports/TEST_RESULTS.md): recorded checks and limits.
+
+Run `ruff check .` and `ruff format --check .` before submitting changes. GitHub Actions runs these checks, tests and the demo; a workflow definition alone is not evidence of a successful run.
+
+## Optional local generation
+
+Install and run Ollama locally, set `OLLAMA_MODEL` to an installed model name, then select the optional mode in the app. The adapter calls `http://127.0.0.1:11434/api/generate`. In a container, that address refers to the container—not an Ollama process on your host. Host connectivity needs separate configuration and is outside this offline setup.
+
+Live inference, creative quality, real productivity effects and production readiness remain unvalidated. Only use fictional or approved non-confidential inputs.
+
+## Attribution
+
+See [REUSE.md](docs/REUSE.md) for component provenance. MIT applies to original code and synthetic materials; reused material retains its attribution. The research theme was informed by a user-supplied enterprise thesis topic, not an affiliated company project.
